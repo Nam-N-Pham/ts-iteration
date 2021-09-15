@@ -222,8 +222,21 @@ function someoneToLove(strings: string[]): boolean {
 type Hobbies = Record<string, { title: string; description: string }>
 function objectKeys(objectOfHobbies: Hobbies): string[] {
   // Replace the code below with your own code
-  return []
+  // return []
+  return Object.keys(objectOfHobbies).map(
+    hobbies => `${hobbies} - ${objectOfHobbies[hobbies].title}`
+  )
 }
+
+function _map(numbers: number[], func: (number: number) => number): number[] {
+  numbers.forEach(number => func(number))
+  return numbers
+}
+
+const numbers = [1, 2, 3, 4, 5]
+const doubled = _map(numbers, function(number) {
+  return number * 2
+})
 
 /**
  *
